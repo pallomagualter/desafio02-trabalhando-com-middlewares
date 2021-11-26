@@ -28,7 +28,7 @@ function checksCreateTodosUserAvailability(request, response, next) {
 
   if (user.pro) {
     return next();
-  } else if (!user.pro && user.todos.length + 1 <= 10) {
+  } else if (!user.pro && user.todos.length < 10) {
     return next();
   }
 
